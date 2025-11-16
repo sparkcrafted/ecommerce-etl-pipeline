@@ -25,12 +25,12 @@ Efficiently ingest, clean, transform, and deliver advanced e-commerce data for a
 
 ## 📁 Repository Structure
 ```
-ecommerce-etl-pipeline/ 
-    ├── split_csv.py                  # Utility to split very large CSVs 
-    ├── requirements.txt              # Python requirements 
-    ├── LICENSE ├── remove-files.txt   # Used for repo cleaning (Git history) 
-    ├── test_partX.csv, etc.          # Working data files (never tracked) 
-    ├── notebooks/                    # Analysis notebooks for EDA and ML 
+ecommerce-etl-pipeline/
+    ├── split_csv.py                  # Utility to split very large CSVs
+    ├── requirements.txt              # Python requirements
+    ├── LICENSE├── remove-files.txt   # Used for repo cleaning (Git history)
+    ├── test_partX.csv, etc.          # Working data files (never tracked)
+    ├── notebooks/                    # Analysis notebooks for EDA and ML
     ├── aws_glue_jobs/                # Glue/ETL scripts)
     ├── README.md
 ```
