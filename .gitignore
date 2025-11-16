@@ -1,0 +1,5 @@
+git add .gitignore
+git commit -m "Add .gitignore for data hygiene"
+git push
+
+
