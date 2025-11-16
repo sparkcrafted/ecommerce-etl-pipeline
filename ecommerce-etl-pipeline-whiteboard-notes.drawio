@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15" version="29.0.3">
+  <diagram id="mUTb9pxzMLT0bge-f1Fd" name="Page-1">
+    <mxGraphModel dx="2665" dy="1199" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6iu_p2EDdZprySknlbIH-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-608" y="-368.5" width="410" height="758.5" as="geometry" />
+        </mxCell>
+        <mxCell id="6iu_p2EDdZprySknlbIH-3" value="Data Transformation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="1" vertex="1">
+          <mxGeometry x="-535" y="-362" width="260" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6iu_p2EDdZprySknlbIH-44" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-188" y="-368.5" width="340" height="758.5" as="geometry" />
+        </mxCell>
+        <mxCell id="6iu_p2EDdZprySknlbIH-46" value="Data Consumers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="1" vertex="1">
+          <mxGeometry x="-103" y="-362" width="206.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6iu_p2EDdZprySknlbIH-70" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-970" y="-368" width="352" height="758" as="geometry" />
+        </mxCell>
+        <mxCell id="6iu_p2EDdZprySknlbIH-72" value="Data Sources" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="1" vertex="1">
+          <mxGeometry x="-940" y="-362" width="252" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_ValIdw8PlhJ6Ewr4FTs-1" value="&lt;b&gt;Landing Zone:&lt;/b&gt;&lt;br&gt;&lt;br&gt;All raw data land here as CSV, JSON, TXT, or raw event batches.&lt;br&gt;&lt;br&gt;Partitioned directories by data type and ingestion date &lt;br&gt;&lt;br&gt;(dt=YYYY/MM).&lt;br&gt;&lt;br&gt;MongoDB Atlas on AWS and Amazon S3&lt;br&gt;&lt;br&gt;AWS Database Migration Service (DMS)&lt;br&gt;&lt;br&gt;ETL via AWS Glue for zone transition&lt;br&gt;&lt;br&gt;Amazon Kinesis Firehose for Bluesky streaming ingestion&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;Clean Zone:&lt;/b&gt;&lt;br&gt;&lt;br&gt;AWS Glue ETL jobs clean, validate, and partition data (by day/hour).&lt;br&gt;&lt;br&gt;ETL via AWS Glue for zone transition&lt;br&gt;&lt;br&gt;Datasets:&lt;br&gt;&lt;br&gt;Google/Amazon: Clean CSV/Parquet, schema standardized, ready for join/denormalization.&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Bluesky: Flattened, validated events in JSON or Parquet.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Curated Zone:&lt;/b&gt;&lt;br&gt;&lt;br&gt;Joins, denormalizes, and aggregates analytic-ready tables. (Examples: Joined Product Table (sales, reviews, browsing metrics)&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Daily/weekly product trends, campaign or sentiment aggregates from Bluesky matched to Amazon/Google SKUs.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Data partitioned by business-relevant keys: by date/product/time window.&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-580" y="-330" width="330" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="_ValIdw8PlhJ6Ewr4FTs-2" value="&lt;b&gt;Google Merchandise Store:&lt;/b&gt;&lt;br&gt;&lt;br&gt;Tables: Inventory, Orders, Customer Profiles, Product Browsing.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;div&gt;Media/Logs: Product Photos, Clickstream Logs (MongoDB Atlas on AWS.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Source: Kaggle. Files ingested via DMS (for structured) or S3 Bulk Upload via AWS CLI/API(CSV, JSON for browsing logs &amp;amp; catalog).&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;b&gt;&lt;br&gt;Amazon Product Reviews:&lt;/b&gt;&lt;br&gt;&lt;br&gt;Tables: Review Text, Review &amp;amp; Product IDs, Star Ratings, Helpful Votes.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Source: Kaggle download. Bulk upload to S3, then processed by AWS Glue.&lt;br&gt;Partitioned by: Year/month/day where possible.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Bluesky Firehose API:&lt;/b&gt;&lt;br&gt;&lt;br&gt;Event Fields: Username/ID, Event Timestamp, Event Type, Nested/Reply events.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Source: Streaming through AWS Kinesis Firehose.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Ingestion: Firehose does validation, converts to Parquet or Clean JSON, partitions by date/hour.&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-959" y="-317" width="330" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="_ValIdw8PlhJ6Ewr4FTs-3" value="&lt;b&gt;Marketing Specialists:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;div&gt;Use QuickSight/Tableau to track campaign effectiveness, product trends, hot-searches, referral activity; view dashboards and heatmaps on at least a daily to hourly cadence.&lt;br&gt;&lt;br&gt;&lt;b&gt;Data Analysts:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;div&gt;Access via Athena/SQL to generate reports, export ad-hoc tables, monitor sales, customer churn, review sentiment. Data auto-refreshed at scheduled intervals.&lt;br&gt;&lt;br&gt;&lt;b&gt;Data Scientists:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Connect to SageMaker or SparkML to train models for recommendation, classification, forecasting.&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Need regular, feature-rich, denormalized datasets; may build models to predict reviews, optimize campaign targeting, or automate anomaly detection.&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-178" y="-330" width="320" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="_ValIdw8PlhJ6Ewr4FTs-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="-368.5" width="340" height="758.5" as="geometry" />
+        </mxCell>
+        <mxCell id="_ValIdw8PlhJ6Ewr4FTs-4" value="Data flow from source to consumer is fully automated and governed by AWS IAM roles and Glue Data Catalog metadata.&amp;nbsp;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Partitioning and ETL logic designed for reproducibility, incremental loading, and cost-efficient analytics.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;All critical data state transitions and transformations are captured and auditable for compliance and extension.&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="-330" width="320" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="_ValIdw8PlhJ6Ewr4FTs-6" value="Notes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="220" y="-362" width="206.5" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
