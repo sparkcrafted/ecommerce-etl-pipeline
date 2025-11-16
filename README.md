@@ -66,7 +66,7 @@ See `.gitignore` for data/file hygiene rules.
 ---
 
 ## 🧰 Tech Stack
-Python 3.10+, pandas, AWS CLI, AWS SDK (boto3), AWS S3, Glue, Lambda, Athena, SageMaker, (optionally) PySpark, VS Code
+Python 3.10+, pandas, AWS CLI, AWS SDK (boto3), AWS S3, Glue, Lambda, Athena, SageMaker, PySpark, VS Code
 
 ---
 
@@ -74,7 +74,7 @@ Python 3.10+, pandas, AWS CLI, AWS SDK (boto3), AWS S3, Glue, Lambda, Athena, Sa
 ✅ Automated large CSV splitting  
 ✅ AWS zoning and data flow tested  
 🟦 Glue/Lambda transformation scripting  
-🟦 EDA/ML samples for SageMaker integration  
+🟦 EDA/ML samples for SageMaker integration (in progress)  
 📈 Athena/Tableau insight examples (in progress)  
 ❌ No data files tracked in repo
 
